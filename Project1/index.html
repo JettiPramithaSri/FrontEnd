@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            background-color: pink;
+            padding: 10px;
+            text-align: right;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        .nav-item:hover{
+            text-decoration: underline;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff147b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #f5f5f5;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding-left: 5px;
+        }
+
+        .sign-in {
+            background-color: #ff147b;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #666;
+            margin: 0 10px;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar a:hover {
+            color: #000;
+        }
+
+        .sale {
+            background: linear-gradient(to right, #ff007f, #ff4d94);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cart-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            gap: 20px;
+            padding: 20px;
+            white-space: nowrap;
+        }
+
+        .carousel-item {
+            min-width: 30%;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background-color: #ff147b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .shop-button:hover {
+            background-color: #e0136f;
+        }
+        .container {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: linear-gradient(to bottom, #ff66b2, #ff99cc);
+            width: 150px;
+            height: 100px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card::before {
+            content: "🌸";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            opacity: 0.5;
+        }
+
+        .arrow {
+            position: absolute;
+            bottom: 10px;
+            font-size: 16px;
+            background: white;
+            color: #ff66b2;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        h2 {
+            color: #d9006c;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 180px;
+            background: linear-gradient(to bottom, #ff66b2, #ff99cc);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: left;
+            position: relative;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            height: 120px;
+        }
+
+        .brand-logo {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .discount {
+            font-size: 18px;
+            color: #000;
+        }
+
+        .cta {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="#" class="nav-item"> Get App</a>
+        <a href="#" class="nav-item"> Store & Events</a>
+        <a href="#" class="nav-item"> Gift Card</a>
+        <a href="#" class="nav-item"> Help</a>
+    </div>
+    <div class="navbar">
+        <div class="logo">NYKAA</div>
+        <div class="nav-links">
+            <a href="#">Categories</a>
+            <a href="#">Brands</a>
+            <a href="#">Luxe</a>
+            <a href="#">Nykaa Fashion</a>
+            <a href="#">Beauty Advice</a>
+        </div>
+        <div class="search-bar">
+             <input type="text" placeholder="Search on Nykaa">
+        </div>
+        <a href="#" class="sign-in">Sign in</a>
+        <div class="cart-icon"></div>
+    </div>
+    <div class="navbar">
+        <a href="#">Makeup</a>
+        <a href="#">Skin</a>
+        <a href="#">Hair</a>
+        <a href="#">Appliances</a>
+        <a href="#">Bath & Body</a>
+        <a href="#">Natural</a>
+        <a href="#">Mom & Baby</a>
+        <a href="#">Health & Wellness</a>
+        <a href="#">Men</a>
+        <a href="#">Fragrance</a>
+        <a href="#">Lingerie & Accessories</a>
+        <a href="#" class="sale">SALE</a>
+    </div>
+    <div class="carousel">
+        <div class="carousel-item">
+            <img src="https://images-static.nykaa.com/uploads/9d8047d5-39c7-4108-8db6-0b7e63aaf7b7.gif" alt="Product 1">
+            <div class="title">Scented Bodycare</div>
+            <div class="subtitle">For Your Everything Shower</div>
+            <a href="#" class="shop-button">Shop Now →</a>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://images-static.nykaa.com/creatives/0885f454-ae94-4cab-a4ab-d5a0a1f80056/default.jpg?tr=cm-pad_resize,w-900" alt="Product 2">
+            <div class="title">Mystical PISCES</div>
+            <div class="subtitle">Beauty Edit</div>
+            <a href="#" class="shop-button">Shop Now →</a>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://images-static.nykaa.com/creatives/fa776a6a-cd63-4356-a844-85f16eba77ae/default.jpg?tr=cm-pad_resize,w-900" alt="Product 3">
+            <div class="title">Limited Offer</div>
+            <div class="subtitle">Min 30% on Gift Sets</div>
+            <a href="#" class="shop-button">Shop Now →</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">Gifting <span class="arrow">→</span></div>
+        <div class="card">Makeup <span class="arrow">→</span></div>
+        <div class="card">Skin <span class="arrow">→</span></div>
+        <div class="card">Hair <span class="arrow">→</span></div>
+        <div class="card">Bath & Body <span class="arrow">→</span></div>
+        <div class="card">Fragrance <span class="arrow">→</span></div>
+        <div class="card">Pop-ups <span class="arrow">→</span></div>
+        <div class="card">Luxe <span class="arrow">→</span></div>
+    </div>
+    <h2>TOP-SELLING BRANDS</h2>
+
+    <div class="container">
+        <div class="card">
+            <div class="brand-logo"></div>
+            <div class="discount">Up To 35% Off</div>
+            <div class="cta">On Bestsellers</div>
+            <img src="https://images-static.nykaa.com/uploads/31578196-63a0-4db6-86ec-13d1ce661599.jpg?tr=cm-pad_resize,w-750" alt="Maybelline Products">
+        </div>
+
+        <div class="card">
+            <div class="brand-logo"></div>
+            <div class="discount">Up To 10% Off</div>
+            <div class="cta">On Bestsellers</div>
+            <img src="https://images-static.nykaa.com/uploads/21200fc1-a3df-4d41-a59f-45149b086c30.jpg?tr=cm-pad_resize,w-750" alt="e.l.f Products">
+        </div>
+
+        <div class="card">
+            <div class="brand-logo"></div>
+            <div class="discount">Global Bestsellers</div>
+            <div class="cta">Shop Now</div>
+            <img src="https://images-static.nykaa.com/uploads/c045a39a-12b8-46fd-8689-c386f38a9a18.jpg?tr=cm-pad_resize,w-750" alt="Fenty Beauty Products">
+        </div>
+        <div class="card">
+            <div class="brand-logo"></div>
+            <div class="discount">Up To 20% Off</div>
+            <div class="cta">On Kay Bestsellers!</div>
+            <img src="https://images-static.nykaa.com/uploads/9eacd368-c509-4a8b-a6aa-bf9d2885679f.jpg?tr=cm-pad_resize,w-750" alt="Kay Beauty Products">
+        </div>
+    </div>
+
+</body>
+</html>
