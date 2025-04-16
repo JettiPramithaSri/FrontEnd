@@ -1,0 +1,26 @@
+<!-- promise -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+    <script>
+        const myPromise = new Promise((resolve,reject) => {
+    setTimeout(() => {
+        reject('promise fulfilled after 2 seconds');  
+    },2000);
+});
+
+        myPromise
+        .then((value) => {console.log(value+"pramitha");
+        })
+        .catch((error) => {console.log(error+"error");
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
